@@ -680,14 +680,14 @@ gap: 60px;
 }
 /* Анимация появления секций */
 .fade-section {
-  opacity: 0;
-  transform: translateY(60px);
+  opacity: 1;
+  transform: translateY(0);
   transition: all 1s ease;
 }
 
-.fade-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+.fade-section.hidden {
+  opacity: 0;
+  transform: translateY(60px);
 }
     
     /* =========================
@@ -1112,15 +1112,17 @@ const sections = document.querySelectorAll('.fade-section');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+      entry.target.classList.remove('hidden');
     }
   });
 }, { threshold: 0.2 });
 
 sections.forEach(section => {
+  section.classList.add('hidden');
   observer.observe(section);
 });
-</script>
+</script> 
 </body>
 
 </html>
+
