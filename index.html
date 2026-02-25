@@ -830,9 +830,6 @@ gap: 60px;
 
   .mobile-photo {
     display: block;
-  } 
-
-  .mobile-photo {
     position: absolute;
     height: 360px;      /* БОЛЬШЕ */
     width: auto;
@@ -844,17 +841,15 @@ gap: 60px;
 
   .left-mobile {
     left: -40px;
-    transform: translateX(-80px);
   }
 
   .right-mobile {
     right: -40px;
-    transform: translateX(80px);
   }
 
   .mobile-date-wrapper.visible .mobile-photo {
     opacity: 1;
-    transform: translateX(0);
+transform: translateY(-50%) scale(1.05);
   }
 
   .names {
@@ -874,34 +869,6 @@ gap: 60px;
 .fade-section.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.mobile-photo {
-  opacity: 0;
-  transition: all 1s ease;
-}
-
-.left-mobile,
-.right-mobile {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.left-mobile {
-  left: 50%;
-  transform: translate(-180px, -50%);
-}
-
-.right-mobile {
-  left: 50%;
-  transform: translate(80px, -50%);
-}
-
-
-.mobile-date-wrapper.visible .mobile-photo {
-  opacity: 1;
-  transform: translateX(0) scale(1.05);
 }
 
 .subtitle {
@@ -1282,6 +1249,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </body>
 
 </html>
+
 
 
 
