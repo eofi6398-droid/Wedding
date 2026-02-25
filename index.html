@@ -840,11 +840,11 @@ gap: 60px;
   }
 
   .left-mobile {
-    left: -40px;
+    left: -20px;
   }
 
   .right-mobile {
-    right: -40px;
+    right: -20px;
   }
 
   .mobile-date-wrapper.visible .mobile-photo {
@@ -873,7 +873,7 @@ transform: translateY(-50%) scale(1.05);
 
 .subtitle {
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     text-align: center;
     width: 100%;
 }
@@ -885,11 +885,13 @@ transform: translateY(-50%) scale(1.05);
 .mobile-date-wrapper {
     padding: 0 20px;
     width: 100%;
+    flex-direction: column;
 }
 
 .date-center {
     width: 100%;
     text-align: center;
+    margin: 20px 0;
 }
     
 </style>
@@ -911,9 +913,10 @@ transform: translateY(-50%) scale(1.05);
 
         <!-- Центр -->
        <div class="center-block">
-    <div class="subtitle">WEDDING DAY</div>
 
   <div class="mobile-date-wrapper fade-section">
+
+          <div class="subtitle">WEDDING DAY</div>
 
     <img src="sasha.png" class="mobile-photo left-mobile">
 
@@ -1249,6 +1252,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </body>
 
 </html>
+
 
 
 
