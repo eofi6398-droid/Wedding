@@ -712,14 +712,16 @@ gap: 60px;
   }
 
   /* Центрирующий блок */
-  .mobile-date-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    margin: 20px 0 40px;
-  }
+.mobile-date-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0 60px;
+  min-height: 500px;
+}
+
 
   /* WEDDING DAY */
   .subtitle {
@@ -729,34 +731,32 @@ gap: 60px;
     text-align: center;
   }
 
-  /* Дата */
-  .date-center {
-    font-size: 72px;
-    line-height: 1;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    margin: 20px 0;
-  }
+/* Дата */
+.date-center {
+  font-size: 72px;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
 
-  /* Фото */
+ /* Фото */
 .mobile-photo {
-  display: block;
   position: absolute;
-  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%);
   height: 340px;
   width: auto;
   object-fit: contain;
-  opacity: 0;
-  transition: opacity 1s ease;
-  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));
   z-index: 1;
 }
 
- .left-mobile {
+/* Левое фото */
+.left-mobile {
   left: 0;
 }
 
+/* Правое фото */
 .right-mobile {
   right: 0;
 }
@@ -1189,6 +1189,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </body>
 
 </html>
+
 
 
 
