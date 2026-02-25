@@ -826,8 +826,12 @@ gap: 60px;
   }
 
   .mobile-photo {
+    display: block;
+  } 
+
+  .mobile-photo {
     position: absolute;
-    height: 260px;      /* БОЛЬШЕ */
+    height: 360px;      /* БОЛЬШЕ */
     width: auto;
     object-fit: contain;
     opacity: 0;
@@ -888,6 +892,24 @@ gap: 60px;
 .mobile-date-wrapper.visible .mobile-photo {
   opacity: 1;
   transform: translateX(0) scale(1.05);
+}
+
+.subtitle {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.names {
+    margin-top: 70px;
+}
+
+.mobile-date-wrapper {
+    width: 100%;
+}
+
+.date-center {
+    width: 100%;
+    text-align: center;
 }
     
 </style>
@@ -1247,6 +1269,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </body>
 
 </html>
+
 
 
 
