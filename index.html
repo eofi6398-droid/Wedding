@@ -740,40 +740,30 @@ gap: 60px;
   }
 
   /* Фото */
-  .mobile-photo {
-    display: block;
-    position: absolute;
-    top: 140px; /* фиксированная позиция — без translateY */
-    height: 360px;
-    width: auto;
-    object-fit: contain;
-    opacity: 0;
-    transition: opacity 1s ease, transform 1s ease;
-    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));
-    z-index: 1;
-  }
+.mobile-photo {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 340px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1s ease;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));
+  z-index: 1;
+}
 
-  .left-mobile {
-    left: -20px;
-    transform: translateX(-60px);
-  }
+ .left-mobile {
+  left: 0;
+}
 
-  .right-mobile {
-    right: -20px;
-    transform: translateX(60px);
-  }
+.right-mobile {
+  right: 0;
+}
 
-  /* Анимация появления */
-  .mobile-date-wrapper.visible .left-mobile {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .mobile-date-wrapper.visible .right-mobile {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
+.mobile-date-wrapper.visible .mobile-photo {
+  opacity: 1;
+}
   /* Имена */
   .names {
     margin-top: 60px;
@@ -1199,6 +1189,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </body>
 
 </html>
+
 
 
 
