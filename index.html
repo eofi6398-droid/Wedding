@@ -796,48 +796,98 @@ gap: 60px;
 
 @media (max-width: 768px) {
 
-  /* Прячем полароиды */
   .polaroid {
     display: none;
   }
 
   .hero {
-    padding: 40px 0;
+    padding: 60px 0 80px;
   }
 
   .subtitle {
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     font-size: 14px;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
   }
 
   .mobile-date-wrapper {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 20px;
     position: relative;
-  }
-
-  .mobile-photo {
-    display: block;
-    height: 220px;   /* одинаковая высота */
-    width: auto;
-    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 40px;
   }
 
   .date-center {
-    font-size: 64px;
+    font-size: 72px;
     line-height: 1;
+    text-align: center;
     z-index: 2;
   }
 
-  .names {
-    margin-top: 25px;
-    padding: 0 30px;
-    font-size: 22px;
+  .mobile-photo {
+    position: absolute;
+    height: 260px;      /* БОЛЬШЕ */
+    width: auto;
+    object-fit: contain;
+    opacity: 0;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));
+    transition: all 1s ease;
   }
 
+  .left-mobile {
+    left: -40px;
+    transform: translateX(-80px);
+  }
+
+  .right-mobile {
+    right: -40px;
+    transform: translateX(80px);
+  }
+
+  .mobile-date-wrapper.visible .mobile-photo {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .names {
+    margin-top: 40px;
+    padding: 0 40px;
+    font-size: 24px;
+  }
+
+}
+
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-photo {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.left-mobile {
+  left: -40px;
+  transform: translateX(-80px);
+}
+
+.right-mobile {
+  right: -40px;
+  transform: translateX(80px);
+}
+
+
+.mobile-date-wrapper.visible .mobile-photo {
+  opacity: 1;
+  transform: translateX(0) scale(1.05);
 }
     
 </style>
@@ -861,17 +911,17 @@ gap: 60px;
        <div class="center-block">
     <div class="subtitle">WEDDING DAY</div>
 
-    <div class="mobile-date-wrapper">
+  <div class="mobile-date-wrapper fade-section">
 
-        <img src="nastya.png" class="mobile-photo left-mobile">
+    <img src="sasha.png" class="mobile-photo left-mobile">
 
-        <div class="date-center">
-            26<br>06<br>26
-        </div>
-
-        <img src="sasha.png" class="mobile-photo right-mobile">
-
+    <div class="date-center">
+        26<br>06<br>26
     </div>
+
+    <img src="nastya.png" class="mobile-photo right-mobile">
+
+</div>
 
     <div class="names">
         Александр + Анастасия
@@ -1197,6 +1247,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </body>
 
 </html>
+
 
 
 
