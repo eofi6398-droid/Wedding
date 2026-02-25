@@ -680,14 +680,14 @@ gap: 60px;
 }
 /* Анимация появления секций */
 .fade-section {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 1s ease;
-}
-
-.fade-section.hidden {
   opacity: 0;
   transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
     
     /* =========================
@@ -1107,22 +1107,28 @@ document.getElementById("prevWish").onclick = function() {
 
 
 <script>
-const sections = document.querySelectorAll('.fade-section');
+document.addEventListener("DOMContentLoaded", function () {
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.remove('hidden');
-    }
+  const sections = document.querySelectorAll(".fade-section");
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, {
+    threshold: 0.15
   });
-}, { threshold: 0.2 });
 
-sections.forEach(section => {
-  section.classList.add('hidden');
-  observer.observe(section);
+  sections.forEach(function(section) {
+    observer.observe(section);
+  });
+
 });
-</script> 
+</script>
 </body>
 
 </html>
+
 
