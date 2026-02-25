@@ -881,14 +881,21 @@ gap: 60px;
   transition: all 1s ease;
 }
 
+.left-mobile,
+.right-mobile {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .left-mobile {
-  left: -60px;
-  transform: translateX(-60px);
+  left: 50%;
+  transform: translate(-180px, -50%);
 }
 
 .right-mobile {
-  right: -60px;
-  transform: translateX(60px);
+  left: 50%;
+  transform: translate(80px, -50%);
 }
 
 
@@ -1275,6 +1282,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </body>
 
 </html>
+
 
 
 
